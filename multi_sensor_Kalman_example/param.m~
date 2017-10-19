@@ -4,7 +4,7 @@
 classdef param
     properties (Constant)
         %% control parameters 
-        dockFig = true;                         % dock all figures
+        dockFig = true;             % dock all figures
         
         %% parameters
         
@@ -12,7 +12,7 @@ classdef param
         % dynamics:     x(k+1) = Phi * x(k) + Gamma * w(k)
         % measurement:  yi(k)  = H(i,:)  * x(k) + vi(k)
         
-        K = 200;                                % sampling points
+        K = 200;                    % sampling points
         Ts = 0.01;                              % sampling time
         x0 = zeros(3,1);                        % initial state mean
         P0 = 0.01*diag(ones(3,1));              % initial state variance 
@@ -24,7 +24,7 @@ classdef param
         Phi = [1, param.Ts, param.Ts^2/2 ; ...  % state evolution matrix
                0, 1,  param.Ts     ; ...
                0, 0,  1      ];
-        Gamma = [0; 0; 1];                      % process noise matrix        
+        Gamma = [0; 0; 1];          % process noise matrix        
     
     end    
 end
