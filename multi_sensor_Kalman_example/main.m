@@ -10,17 +10,15 @@ clear all; close all; clc;
 init();
 
 % generate data
-data = generateData();
+[x0_true, x_true, y, t] = generateData();
 
 % centralized Kalman Filter
-x_central = KF(data.y);
+x_central = KF(y);
+
 
 
 
 % print data
-x_true = data.x_true;
-t = data.t;
-
 figure(1); clf;
     ax(1) = subplot(311); hold on; grid on;
         plot(t,x_true(1,:),'k','linewidth',1);

@@ -1,4 +1,4 @@
-function data = generateData()
+function [x0_true, x_true, y, t] = generateData()
 % data = generateData();
 % generates data struct
 % Output:
@@ -44,11 +44,5 @@ for k = 2:K
               H(3,:)*x_true(:,k) + v(3) ];
     
 end
-
-% prepare output
-data.x_true = x_true;
-data.x0_true = x0_true;
-data.y = y;
-data.t = t;
 
 end
